@@ -69,12 +69,10 @@
       const addBtn = document.getElementById('add-btn');
       
       // Question: What is "e" short for?
-      // e = event
       addBtn.addEventListener('click', (e) => {
         e.preventDefault();
         
         // Question: What does this code do?
-        // access specified element id's value and removes whitespace
         let charName = document.getElementById('name').value.trim();
         let charRole = document.getElementById('role').value.trim();
         let charAge = document.getElementById('age').value.trim();
@@ -88,8 +86,6 @@
         };
 
         // Question: What does this code do??
-        // Fetches (gets)/access response, turns body into JSON text
-        // take URL as 1st parameter, and 2nd parameter = object
         fetch('/api/characters', {
           method: 'POST',
           headers: {
@@ -97,7 +93,6 @@
           },
           body: JSON.stringify(newCharacter),
         })
-        // then response gets console-logged
           .then((response) => response.json())
           .then((data) => {
             console.log('add.html', data);
